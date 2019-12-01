@@ -2,10 +2,10 @@ resources:
   - name: app
     type: GitRepo
    configuration:
-      gitProvider: git
-      path: BatelT/pipelines-simple-steps
-      branches:
-        include: master
+     gitProvider: git
+     path: BatelT/pipelines-simple-steps
+     branches:
+       include: master
 pipelines:
   - name: barebones_pipeline
     steps:
