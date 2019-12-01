@@ -1,48 +1,8 @@
 resources:
   - name: app
     type: GitRepo
-   configuration:
-      path: BatelT/pipelines-simple-steps
+    configuration:
       gitProvider: git
-
-pipelines:
-  - name: barebones_pipeline
-    steps:
-    - name: step_1
-      type: Bash
-      configuration:
-        inputResources:
-          - name: app
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_2
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_1
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_3
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_1
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_4
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_2
-          - name: step_3
-        runtime:
-      execution:
-        onExecute:
-          - printenv
- 
+      path: BatelT/pipelines-simple-steps
+      branches:
+        include: master
