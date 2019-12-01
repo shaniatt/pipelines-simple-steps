@@ -1,7 +1,7 @@
 resources:
   - name: app
     type: GitRepo
-    configuration:
+   configuration:
       path: BatelT/pipelines-simple-steps
       gitProvider: git
 
