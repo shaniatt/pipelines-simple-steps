@@ -1,0 +1,40 @@
+pipelines:
+  - name: barebones_pipeline
+    steps:
+    - name: step_1
+      type: Bash
+      configuration:
+        inputResources:
+          - name: app
+      execution:
+        onExecute:
+          - printenv
+ 
+    - name: step_2
+      type: Bash
+      configuration:
+        inputSteps:
+          - name: step_1
+      execution:
+        onExecute:
+          - printenv
+ 
+    - name: step_3
+      type: Bash
+      configuration:
+        inputSteps:
+          - name: step_1
+      execution:
+        onExecute:
+          - printenv
+ 
+    - name: step_4
+      type: Bash
+      configuration:
+        inputSteps:
+          - name: step_2
+          - name: step_3
+        runtime:
+      execution:
+        onExecute:
+          - printenv
