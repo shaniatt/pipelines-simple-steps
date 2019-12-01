@@ -1,8 +1,8 @@
 resources:
   - name: app
-    type: GitRepo
+    type: git
     configuration:
       gitProvider: myGitHub
-      path: myproject/app
+      path: BatelT/pipelines-simple-steps
       branches:
         include: master
