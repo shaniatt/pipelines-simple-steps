@@ -13,10 +13,6 @@ resources:
       path: BatelT/carbot
       branches:
         include: master    
-  - name: myFile
-    type: RemoteFile
-    configuration:
-      source: dummyFileServer
 pipelines:  
   - name: simple_pipeline
     configuration:
