@@ -1,0 +1,8 @@
+resources:
+  - name: app
+    type: GitRepo
+    configuration:
+      gitProvider: myGitHub
+      path: myproject/app
+      branches:
+        include: master
