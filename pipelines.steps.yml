@@ -1,26 +1,22 @@
+resources:
+  - name: myAppRepo
+    type: GitRepo
+    configuration:
+      gitProvider: github
+      path: BatelT/pipelines-simple-steps
 pipelines:
-  - name: barebones_pipeline
+  - name: pipeline_hello_world
+    configuration:
+      environmentVariables:
+        readOnly:
+          MY_MESSAGE: '"Hello World!"'
     steps:
-    - name: step_1
-      type: Bash
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_2
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_1
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_3
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_1
-      execution:
-        onExecute:
-          - printenv
+      - name: step_1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: myAppRepo
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
+            - echo “running CI for master”
