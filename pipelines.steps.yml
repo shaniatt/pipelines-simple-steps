@@ -4,8 +4,6 @@ pipelines:
     - name: step_1
       type: Bash
       configuration:
-        inputResources:
-          - name: app
       execution:
         onExecute:
           - printenv
@@ -24,17 +22,6 @@ pipelines:
       configuration:
         inputSteps:
           - name: step_1
-      execution:
-        onExecute:
-          - printenv
- 
-    - name: step_4
-      type: Bash
-      configuration:
-        inputSteps:
-          - name: step_2
-          - name: step_3
-        runtime:
       execution:
         onExecute:
           - printenv
