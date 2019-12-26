@@ -3,7 +3,6 @@ pipelines:
     steps:
     - name: step_1
       type: Bash
-      configuration:
       execution:
         onExecute:
           - printenv
