@@ -2,8 +2,8 @@ resources:
   - name: myAppRepo
     type: GitRepo
     configuration:
-      gitProvider: github
-      path: BatelT/pipelines-simple-steps
+      gitProvider: Pipe
+      path: shaniatt/pipelines-simple-steps
 pipelines:
   - name: pipeline_hello_world
     configuration:
